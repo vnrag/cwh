@@ -1,5 +1,5 @@
 {
-    "name": "maxbanton/cwh",
+    "name": "vnrag/cwh",
     "homepage": "https://github.com/maxbanton/cwh",
     "type": "library",
     "description": "AWS CloudWatch Handler for Monolog library",
