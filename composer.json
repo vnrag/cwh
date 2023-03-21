@@ -1,5 +1,5 @@
 {
-    "name": "vnrag/cwh",
+    "name": "vnrag/px-cwh",
     "homepage": "https://github.com/maxbanton/cwh",
     "type": "library",
     "description": "AWS CloudWatch Handler for Monolog library",
