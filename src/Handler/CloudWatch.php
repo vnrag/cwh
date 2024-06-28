@@ -14,21 +14,21 @@ class CloudWatch extends AbstractProcessingHandler
     /**
      * Requests per second limit (https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/cloudwatch_limits_cwl.html)
      */
-    const RPS_LIMIT = 5;
+    public const RPS_LIMIT = 5;
 
     /**
      * Event size limit (https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/cloudwatch_limits_cwl.html)
      *
      * @var int
      */
-    const EVENT_SIZE_LIMIT = 262118; // 262144 - reserved 26
+    public const EVENT_SIZE_LIMIT = 262118; // 262144 - reserved 26
 
     /**
      * The batch of log events in a single PutLogEvents request cannot span more than 24 hours.
      *
      * @var int
      */
-    const TIMESPAN_LIMIT = 86400000;
+    public const TIMESPAN_LIMIT = 86400000;
 
     /**
      * @var CloudWatchLogsClient
@@ -138,7 +138,7 @@ class CloudWatch extends AbstractProcessingHandler
         int $retention = 14,
         int $batchSize = 10000,
         array $tags = [],
-        Level $level = Level::Debug,
+        int $level = Level::Debug,
         bool $bubble = true,
         bool $createGroup = true
     ) {
@@ -156,7 +156,7 @@ class CloudWatch extends AbstractProcessingHandler
 
         parent::__construct($level, $bubble);
 
-        $this->savedTime = new \DateTime;
+        $this->savedTime = new \DateTime();
     }
 
     /**
